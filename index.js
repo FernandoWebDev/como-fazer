@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const axios = require('axios')
 const bodyParser = require('body-parser')
+
 const categorias = require('./routes/categorias')
+const publicacoes = require('./routes/publicacoes')
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded())
@@ -14,6 +16,7 @@ app.get('/', async(req, res) => {
 })
 
 app.use('/categoria', categorias)
+
 
 const port = process.env.PORT || 3000
 
